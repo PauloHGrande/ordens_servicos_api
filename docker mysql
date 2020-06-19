@@ -1,0 +1,17 @@
+comando para baixar o docker do mysql 5.7
+docker image pull mysql:5.7
+
+comando pra configurar o mysql em uma pasta que fiz no c:\mysql
+docker run --name mysql -p 3306:3306 -e MYSQL_ROOT_PASSWORD=docker -d mysql
+
+comando para rodar o container ja instalado o my mysql
+docker container inspect 3dff32829e35
+"IPAddress": "172.17.0.3" Port: 3306
+
+docker start 3dff32829e35
+docker stop 3dff32829e35
+
+
+
+------------------------
+Parada da Video Aula 2 em 23:00
