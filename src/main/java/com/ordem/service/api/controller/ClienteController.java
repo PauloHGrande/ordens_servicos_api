@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -22,6 +23,7 @@ import com.ordem.service.domain.repository.ClienteRepository;
 import com.ordem.service.domain.service.CadastroClienteService;
 
 @RestController
+@RequestMapping("clientes")
 public class ClienteController {
 	
 	@Autowired
@@ -30,7 +32,7 @@ public class ClienteController {
 	@Autowired
 	private CadastroClienteService cadastroCliente;
 	
-	@GetMapping("/clientes")
+	@GetMapping
 	public List<Cliente> listar() {
 		
 		// Usando o JPQL
@@ -64,7 +66,7 @@ public class ClienteController {
 		
 	}
 	
-	@PostMapping("/clientes")
+	@PostMapping
 	@ResponseStatus(HttpStatus.CREATED)
 	public Cliente adicionar(@Valid @RequestBody Cliente cliente) {
 		

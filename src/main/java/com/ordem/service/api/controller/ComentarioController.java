@@ -41,7 +41,7 @@ public class ComentarioController {
 	public List<ComentarioModel> listar(@PathVariable Long ordemServicoId) {
 		
 		OrdemServico ordemServico = ordemServicoRepository.findById(ordemServicoId)
-				.orElseThrow(() -> new EntidadeNaoEncontradaException("Ordem de Seriço não Encontrada"));
+				.orElseThrow(() -> new EntidadeNaoEncontradaException("Ordem de Serviço não Encontrada"));
 		
 		return toCollectionModel(ordemServico.getComentarios());
 		
