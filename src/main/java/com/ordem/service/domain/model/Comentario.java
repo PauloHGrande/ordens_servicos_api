@@ -8,11 +8,15 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
 
+import org.hibernate.annotations.GenericGenerator;
+
 @Entity
 public class Comentario {
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	//@GeneratedValue(generator = "increment")
+	//@GenericGenerator(name = "increment", strategy = "increment")
 	private Long id;
 	
 	@ManyToOne
@@ -33,10 +37,10 @@ public class Comentario {
 	public void setOrdemServico(OrdemServico ordemServico) {
 		this.ordemServico = ordemServico;
 	}
-	public String getDescriccao() {
+	public String descricao() {
 		return descricao;
 	}
-	public void setDescriccao(String descricao) {
+	public void setDescricao(String descricao) {
 		this.descricao = descricao;
 	}
 	public OffsetDateTime getDataEnvio() {

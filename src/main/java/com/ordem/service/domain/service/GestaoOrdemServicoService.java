@@ -46,7 +46,7 @@ public class GestaoOrdemServicoService {
 		
 		Comentario comentario = new Comentario();
 		comentario.setDataEnvio(OffsetDateTime.now());
-		comentario.setDescriccao(descricao);
+		comentario.setDescricao(descricao);
 		comentario.setOrdemServico(ordemServico);
 		
 		return comentarioRepository.save(comentario);

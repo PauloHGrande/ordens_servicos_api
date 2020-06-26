@@ -10,6 +10,8 @@ import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 
+import org.hibernate.annotations.GenericGenerator;
+
 import com.ordem.service.ValidationGroups;
 
 @Entity
@@ -17,7 +19,11 @@ public class Cliente {
 	
 	@NotNull(groups = ValidationGroups.ClienteId.class)
 	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	//Para postgres
+	//@GeneratedValue(generator = "increment")
+	//@GenericGenerator(name = "increment", strategy = "increment")
+	// Para may Sql
+	@GeneratedValue(strategy = GenerationType.IDENTITY)  
 	private Long id;
 	
 	@NotBlank

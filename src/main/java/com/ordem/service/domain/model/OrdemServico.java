@@ -19,6 +19,8 @@ import javax.validation.constraints.NotNull;
 import javax.validation.groups.ConvertGroup;
 import javax.validation.groups.Default;
 
+import org.hibernate.annotations.GenericGenerator;
+
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonProperty.Access;
 import com.ordem.service.ValidationGroups;
@@ -29,6 +31,8 @@ public class OrdemServico {
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	//@GeneratedValue(generator = "increment")
+	//@GenericGenerator(name = "increment", strategy = "increment")
 	private Long id;
 	
 	@Valid
